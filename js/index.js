@@ -24,67 +24,125 @@ for (let i = 0; i < skills.length; i++) {
 
 // Message section
 
-let userList = []
+let messageArchive = [];
 
 
 // Function that takes the form input, and lists it as a message in the message section
 const submitMessage = (event) => {
-  const userName = event.target.usersName.value;
-  const userEmail = event.target.usersEmail.value;
-  const userMessage = event.target.usersMessage.value;
 
   const user = new Object();
   user.name = event.target.usersName.value;
   user.email = event.target.usersEmail.value;
   user.message = event.target.usersMessage.value;
 
-  userList.push(user)
+  messageArchive.push(user)
 
   const newMessage =  document.createElement('li');
   newMessage.innerHTML = `<a href="mailto:${user.email}">${user.name}</a> wrote: ${user.message}`
 
-  newMessage.appendChild(removeButton);
-  newMessage.appendChild(editButton);
+  removeButtonCreation(newMessage);
+  editButtonCreation(newMessage);
+  editForm(newMessage);
   messageList.appendChild(newMessage);
-  console.log(`${userName}, ${userEmail}, ${userMessage}`);
   event.preventDefault();
   event.target.reset();
   hideMessages();
+  return messageArchive
 }
 
 // Function that removes the parentNode of the event that initiates it
 const removeContent = (event) => {
   const entry = event.target.parentNode;
+  const liIndex = parentIndex(event);
+  messageArchive.splice(liIndex, 1);
   entry.remove();
   hideMessages();
-
 }
 
 // Function that check what the index is of the parent of the pressed button
 const parentIndex = (event) => {
   const pressedButton = event.target;
-  const content = pressedButton.parentNode;
-  const index = Array.from(content.parentNode.children).indexOf(content);
+  const parentElement = pressedButton.parentNode;
+  const index = Array.from(parentElement.parentNode.children).indexOf(parentElement);
   return index;
 }
 
 // Function that edits comment
 
 const editContent = (event) => {
-  const liIndex = parentIndex(event);
+  const pressedButton = event.target;
+  const form = pressedButton.parentNode
+  console.log(pressedButton.editedMessage.value)
+  // messageArchive[liIndex].message = 'Edited Message'
+  const editedMessage = event.target.editedMessage.value
+  
+  const listing = form.parentNode;
+  console.log(Array.from(listing.parentNode.children))
+  const index = Array.from(listing.parentNode.children).indexOf(listing);
+  console.log(index)
+  
+  
+  // messageArchive[index].message = editedMessage;
 
-  userList[liIndex].message = 'Edited Message'
-
-  content.innerHTML = `<a href="mailto:${userList[liIndex].email}">${userList[liIndex].name}</a> wrote: ${userList[liIndex].message}`
-  content.appendChild(removeButton);
-  content.appendChild(editButton)
+  // listing.innerHTML = `<a href="mailto:${messageArchive[index].email}">${messageArchive[index].name}</a> wrote: ${messageArchive[index].message}`
+  // removeButtonCreation(listing);
+  // editButtonCreation(listing);
+  // editForm(listing);
+  event.preventDefault();
 }
 
-// Edit button 
-const editButton = document.createElement('button');
-editButton.innerText = 'Edit comment';
-editButton.setAttribute('type', 'button');
-editButton.addEventListener('click', editContent)
+// Function that adds edit message form
+
+const editForm = (appendTarget) => {
+  const form = document.createElement('form');
+  form.setAttribute('name', 'editForm');
+  form.style.display = 'none';
+  form.addEventListener('submit', editContent)
+
+  const textField = document.createElement('textarea');
+  textField.setAttribute('name', 'editedMessage');
+  textField.setAttribute('required', 'true');
+  textField.setAttribute('placeholder', 'Enter new message here');
+
+  const submitButton = document.createElement('button')
+  submitButton.setAttribute('type', 'submit');
+  submitButton.innerText = 'Submit'
+  submitButton.addEventListener('submit', editContent)
+
+  form.appendChild(textField);
+  form.appendChild(submitButton);
+  appendTarget.appendChild(form);
+}
+
+// Function that shows the edit form
+let pressCounter = 0;
+const showEdit = (event) => {
+  
+  const liIndex = parentIndex(event);
+
+  const pressedButton = event.target;
+  const listing = pressedButton.parentNode;
+  const form = listing.querySelector('form[name=editForm]')
+
+  if (pressCounter === 0) {
+    form.style.display = 'block';
+    pressCounter++;
+  } else {
+    form.style.display = 'none';
+    pressCounter = 0;
+  }
+}
+
+
+
+// Creates the edit button and appends it to a target element
+const editButtonCreation = (appendTarget) => {
+  const editButton = document.createElement('button');
+  editButton.innerText = 'Edit comment';
+  editButton.setAttribute('type', 'button');
+  editButton.addEventListener('click', showEdit)
+  appendTarget.appendChild(editButton);
+};
 
 // Function that checks for number of li on message section and hides it when 0
 const hideMessages = () => {
@@ -97,10 +155,14 @@ const hideMessages = () => {
 }
 
 // Creates and attaches a remove button to any messages
+const removeButtonCreation = (appendTarget) => {
 const removeButton = document.createElement('button');
 removeButton.innerText = 'remove';
 removeButton.setAttribute('type', 'button');
 removeButton.addEventListener('click', removeContent)
+appendTarget.appendChild(removeButton);
+}
+
 
 // Selects the form and ul elements and runs the submitMessage function when form is submitted
 const messageForm = document.querySelector('form[name=leave_message]');
