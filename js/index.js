@@ -72,14 +72,16 @@ const parentIndex = (event) => {
 const editContent = (event) => {
   const pressedButton = event.target;
   const form = pressedButton.parentNode
-  console.log(pressedButton.editedMessage.value)
+  // console.log(pressedButton.editedMessage.value)
   // messageArchive[liIndex].message = 'Edited Message'
   const editedMessage = event.target.editedMessage.value
   
-  const listing = form.parentNode;
+  const listing = form.parentNode; // !!!! This is the UL, not the listing !!!
+  console.log(`listing is: ${listing}`) 
+  console.log(listing)
   console.log(Array.from(listing.parentNode.children))
   const index = Array.from(listing.parentNode.children).indexOf(listing);
-  console.log(index)
+  console.log(`Index of listing is: ${index}`)
   
   
   // messageArchive[index].message = editedMessage;
@@ -107,10 +109,11 @@ const editForm = (appendTarget) => {
   const submitButton = document.createElement('button')
   submitButton.setAttribute('type', 'submit');
   submitButton.innerText = 'Submit'
-  submitButton.addEventListener('submit', editContent)
+  
 
   form.appendChild(textField);
   form.appendChild(submitButton);
+  form.addEventListener('submit', editContent);
   appendTarget.appendChild(form);
 }
 
