@@ -31,9 +31,9 @@ const submitMessage = (event) => {
   const userMessage = event.target.usersMessage.value;
 
   const newMessage =  document.createElement('li');
-  newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a> wrote: ${userMessage}`
+  newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a> wrote: ${userMessage}`;
 
-  newMessage.appendChild(removeButton);
+  removeButtonCreation(newMessage);
   messageList.appendChild(newMessage);
   console.log(`${userName}, ${userEmail}, ${userMessage}`);
   event.preventDefault();
@@ -48,6 +48,15 @@ const removeContent = (event) => {
   hideMessages();
 }
 
+  // Creates and attaches the remove function to a target
+const removeButtonCreation = (appendTarget) => {
+  const removeButton = document.createElement('button');
+  removeButton.innerText = 'remove';
+  removeButton.setAttribute('type', 'button');
+  removeButton.addEventListener('click', removeContent);
+  appendTarget.appendChild(removeButton);
+};
+
 // Function that checks for number of li on message section and hides it when 0
 const hideMessages = () => {
   const messagesList = document.getElementById('messagesList');
@@ -58,11 +67,7 @@ const hideMessages = () => {
   }
 }
 
-// Creates and attaches the remove function to any messages
-const removeButton = document.createElement('button');
-removeButton.innerText = 'remove';
-removeButton.setAttribute('type', 'button');
-removeButton.addEventListener('click', removeContent)
+
 
 // Selects the form and ul elements and runs the submitMessage function when form is submitted
 const messageForm = document.querySelector('form[name=leave_message]');
