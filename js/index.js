@@ -72,43 +72,15 @@ const parentIndex = (event) => {
 const editContent = (event) => {
   const liIndex = parentIndex(event)
   const editedMessage = event.target.editedMessage.value
-  console.log(messageArchive[liIndex].message)
   const user = messageArchive[liIndex]
   user.message = editedMessage
-  console.log(messageArchive[liIndex].message)
   const parent = event.target.parentNode;
   parent.innerHTML = `<a href="mailto:${user.email}">${user.name}</a> wrote: ${user.message}`
   removeButtonCreation(parent);
   editButtonCreation(parent);
   editForm(parent);
   pressCounter = 0;
-
-
-
   event.preventDefault();
-  // event.target.reset();
-  // const pressedButton = event.target;
-  // const listing = pressedButton.parentNode
-  // console.log(pressedButton.editedMessage.value)
-  // console.log('Listing is: ')
-  // console.log(listing)
-  // messageArchive[liIndex].message = 'Edited Message'
-  
-  // const unorderedList = listing.parentNode; // !!!! This is the UL, not the listing g!!!
-  // console.log(`unorderedList is: ${unorderedList}`) 
-  // console.log(unorderedList)
-  // console.log(Array.from(unorderedList.parentNode.children))
-  
-
-  
-  
-  // messageArchive[index].message = editedMessage;
-
-  // listing.innerHTML = `<a href="mailto:${messageArchive[index].email}">${messageArchive[index].name}</a> wrote: ${messageArchive[index].message}`
-  // removeButtonCreation(listing);
-  // editButtonCreation(listing);
-  // editForm(listing);
-  
 }
 
 // Function that adds edit message form
