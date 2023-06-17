@@ -50,7 +50,7 @@ const submitMessage = (event) => {
   return messageArchive
 }
 
-// Function that removes the parentNode of the event that initiates it
+// Function that removes the parentNode of the event 
 const removeContent = (event) => {
   const entry = event.target.parentNode;
   const liIndex = parentIndex(event);
@@ -59,7 +59,7 @@ const removeContent = (event) => {
   hideMessages();
 }
 
-// Function that check what the index is of the parent of the pressed button
+// Function that check what the index is of the parent of an event
 const parentIndex = (event) => {
   const pressedButton = event.target;
   const parentElement = pressedButton.parentNode;
