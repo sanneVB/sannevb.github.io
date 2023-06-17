@@ -70,18 +70,36 @@ const parentIndex = (event) => {
 // Function that edits comment
 
 const editContent = (event) => {
-  const pressedButton = event.target;
-  const form = pressedButton.parentNode
-  // console.log(pressedButton.editedMessage.value)
-  // messageArchive[liIndex].message = 'Edited Message'
+  const liIndex = parentIndex(event)
   const editedMessage = event.target.editedMessage.value
+  console.log(messageArchive[liIndex].message)
+  const user = messageArchive[liIndex]
+  user.message = editedMessage
+  console.log(messageArchive[liIndex].message)
+  const parent = event.target.parentNode;
+  parent.innerHTML = `<a href="mailto:${user.email}">${user.name}</a> wrote: ${user.message}`
+  removeButtonCreation(parent);
+  editButtonCreation(parent);
+  editForm(parent);
+  pressCounter = 0;
+
+
+
+  event.preventDefault();
+  // event.target.reset();
+  // const pressedButton = event.target;
+  // const listing = pressedButton.parentNode
+  // console.log(pressedButton.editedMessage.value)
+  // console.log('Listing is: ')
+  // console.log(listing)
+  // messageArchive[liIndex].message = 'Edited Message'
   
-  const listing = form.parentNode; // !!!! This is the UL, not the listing !!!
-  console.log(`listing is: ${listing}`) 
-  console.log(listing)
-  console.log(Array.from(listing.parentNode.children))
-  const index = Array.from(listing.parentNode.children).indexOf(listing);
-  console.log(`Index of listing is: ${index}`)
+  // const unorderedList = listing.parentNode; // !!!! This is the UL, not the listing g!!!
+  // console.log(`unorderedList is: ${unorderedList}`) 
+  // console.log(unorderedList)
+  // console.log(Array.from(unorderedList.parentNode.children))
+  
+
   
   
   // messageArchive[index].message = editedMessage;
@@ -90,7 +108,7 @@ const editContent = (event) => {
   // removeButtonCreation(listing);
   // editButtonCreation(listing);
   // editForm(listing);
-  event.preventDefault();
+  
 }
 
 // Function that adds edit message form
@@ -113,7 +131,6 @@ const editForm = (appendTarget) => {
 
   form.appendChild(textField);
   form.appendChild(submitButton);
-  form.addEventListener('submit', editContent);
   appendTarget.appendChild(form);
 }
 
