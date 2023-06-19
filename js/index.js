@@ -138,7 +138,6 @@ const editButtonCreation = (appendTarget) => {
 
 // Function that checks for number of li on message section and hides it when 0
 const hideMessages = () => {
-  const messagesList = document.getElementById('messagesList');
   if (messageList.getElementsByTagName('li').length === 0) {
     messageSection.style.display = 'none';
   } else {
