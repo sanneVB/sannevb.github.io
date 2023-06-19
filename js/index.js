@@ -112,8 +112,7 @@ messageForm.addEventListener('submit', newMessage);
 // Function that checks for number of li on message section and hides it when 0
 const hideMessages = () => {
   const messageSection = document.getElementById('messages')
-  const messageList = document.getElementById('messagesList'); // Can be removed and replaced with messageSection?
-  if (messageList.getElementsByTagName('li').length === 0) {
+  if (messageSection.getElementsByTagName('li').length === 0) {
     messageSection.style.display = 'none';
   } else {
     messageSection.style.display = 'block';
