@@ -9,6 +9,22 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Orbitron', sans-serif;
 }
 
+h1 {
+  font-size: 50px;
+}
+
+#about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#aboutTextContainer {
+  flex: auto;
+
+}
+
 #knowhowContainer {
   display: flex;
   justify-content: space-around;
@@ -16,5 +32,4 @@ h1, h2, h3, h4, h5, h6 {
 
 #experience #skills {
   flex: auto;
-  
 }
