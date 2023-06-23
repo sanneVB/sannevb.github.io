@@ -1,0 +1,23 @@
+{
+  "name": "ctd-portofolio",
+  "version": "1.0.0",
+  "description": "Portfolio for Code the Dream",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanneVB/ctd-portofolio.git"
+  },
+  "author": "Sanne van Boheemen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanneVB/ctd-portofolio/issues"
+  },
+  "homepage": "https://github.com/sanneVB/ctd-portofolio#readme",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
