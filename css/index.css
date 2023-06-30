@@ -1,0 +1,165 @@
+/* Using a css reset to normalize CSS looks across browsers */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* Personal CSS */
+
+ body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+} 
+
+body {
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  font-family: 'Fragment Mono', monospace;
+  line-height: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 18px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+
+#about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 40px 0;
+}
+
+#about > * {
+  margin: 0 40px 20px 40px;
+}
+
+#aboutTextContainer {
+  flex: 2;
+
+}
+
+#name > h1 {
+  margin: 0
+}
+
+#knowhowContainer {
+  width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 50px;
+}
+
+div#knowhowContainer > section {
+  flex: auto;
+  margin: 0 50px;
+}
+
+#experience > *, #skills > *  {
+  background-color: #313131;
+}
+
+#experience #skills {
+  flex: auto;
+}
+
+#connectContainer, #messageForm {
+  margin: 40px;
+}
+
+
+
+input, textarea {
+  margin: 5px;
+  font-size: 20px;
+  border: 3px solid #ED9E05;
+  border-radius: 3px;
+}
+
+button {
+  margin: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 2px;
+  padding: 6px 12px;
+  border: 0;
+  color: #fff;
+  background: #ED9E05;
+}
+
+button:hover {
+  box-shadow: 0 0 0 3px #fff;
+}
+
+#messagesList > li {
+  width: fit-content;
+  background-color: #313131;
+}
+
+a:link {
+  color:#FFFFFF;
+}
+
+a:visited {
+  color:#aaaaaa;
+}
+
+footer {
+  margin: auto;
+  padding: 10px;
+  background-color: #313131;
+  width:fit-content
+}
