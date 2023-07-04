@@ -39,6 +39,7 @@ const submitMessageForm = (event) => {
 const createEditButton = (appendTarget) => {
   const editButton = document.createElement('button');
   editButton.innerText = 'Edit message';
+  editButton.setAttribute('class', 'formButton')
   editButton.setAttribute('type', 'button');
   editButton.addEventListener('click', toggleEditFormVisibility)
   appendTarget.appendChild(editButton);
@@ -48,6 +49,7 @@ const createEditButton = (appendTarget) => {
 const createRemoveButton = (appendTarget) => {
   const removeButton = document.createElement('button');
   removeButton.innerText = 'Remove';
+  removeButton.setAttribute('class', 'formButton')
   removeButton.setAttribute('type', 'button');
   removeButton.addEventListener('click', removeContent)
   appendTarget.appendChild(removeButton);
@@ -72,6 +74,7 @@ const createEditForm = (appendTarget) => {
   textField.setAttribute('placeholder', 'Enter new message here');
 
   const submitButton = document.createElement('button')
+  submitButton.setAttribute('class', 'formButton')
   submitButton.setAttribute('type', 'submit');
   submitButton.innerText = 'Submit'
   

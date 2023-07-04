@@ -54,14 +54,14 @@ p, h1, h2, h3, h4, h5, h6 {
  body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-} 
-
-body {
+  min-height: 100vh;
   background-color: #1A1A1A;
   color: #FFFFFF;
   font-family: 'Fragment Mono', monospace;
   line-height: normal;
-}
+  display: flex;
+  flex-direction: column;
+} 
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 18px;
@@ -73,6 +73,38 @@ h1 {
   font-weight: 800;
 }
 
+nav {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  background-color: #313131;
+}
+
+nav select {
+  display: none;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+nav ul li {
+  list-style-type: none;
+  margin: 5px 10px;
+}
+
+@media (max-width: 600px) {
+  nav ul     { display: none; }
+  nav select { 
+    display: inline-block; 
+  }
+}
+
+.sticky {
+	position: sticky;
+	top: 0;
+}
 
 #about {
   display: flex;
@@ -88,6 +120,12 @@ h1 {
 
 #aboutTextContainer {
   flex: 2;
+}
+
+@media (max-width: 1200px ) {
+  #aboutTextContainer {
+    flex-basis: 100%;
+  }
 
 }
 
@@ -99,12 +137,11 @@ h1 {
   width: 700px;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 50px;
-}
+ }
 
 div#knowhowContainer > section {
   flex: auto;
-  margin: 0 50px;
+  margin: 0 40px;
 }
 
 #experience > *, #skills > *  {
@@ -115,11 +152,31 @@ div#knowhowContainer > section {
   flex: auto;
 }
 
+#experience > ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#experience > ul > li {
+  flex-basis: 50%;
+  margin: 20px 0;
+  width: min-content;
+}
 #connectContainer, #messageForm {
   margin: 40px;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
 
+form > * {
+  flex-grow: 0;
+}
 
 input, textarea {
   margin: 5px;
@@ -128,7 +185,7 @@ input, textarea {
   border-radius: 3px;
 }
 
-button {
+.formButton {
   margin: 5px;
   cursor: pointer;
   font-weight: 600;
@@ -157,8 +214,14 @@ a:visited {
   color:#aaaaaa;
 }
 
+#footerContainer {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+}
+
 footer {
-  margin: auto;
+  margin: auto auto 0 auto;
   padding: 10px;
   background-color: #313131;
   width:fit-content

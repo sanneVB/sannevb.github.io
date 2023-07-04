@@ -11,6 +11,24 @@
     <title>CTD Portfolio</title>
   </head>
   <body>
+    <nav class="sticky">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#connectContainer">Connect</a></li>
+        <li><a href="#messageForm">Leave a Message</a></li>
+      </ul>
+      <select>
+        <option value="" selected="">Navigation</option>
+
+        <option value="#about">About</option>
+        <option value="#experience">Experience</option>
+        <option value="#skills">Skills</option>
+        <option value="#connectContainer">Connect</option>
+        <option value="#messageForm">Leave a Message</option>
+      </select>
+    </nav>
     <section id="about">
       <div id="name">
         <h1>Sanne van</h1>
@@ -20,6 +38,7 @@
       <div id="aboutTextContainer">
         <h2>About</h2>
         <p>Entrepreneur 3D printing technician in the Netherlands transitioning to WebDev currently focusing on JavaScript</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod pellentesque lacus, eget porta nisl blandit sit amet. Maecenas fermentum, lacus at gravida vehicula, nibh risus dapibus enim, sit amet blandit libero lacus eget eros. Pellentesque feugiat neque vitae auctor placerat. Maecenas in euismod elit. Ut sodales magna id purus blandit pharetra. Morbi et mi at nisi mattis interdum. Nam mollis egestas mauris, at mattis nunc luctus eu. Sed mollis pretium vehicula. Etiam eu turpis molestie, commodo sapien vitae, dapibus dui. Etiam id libero ac erat dapibus faucibus id nec purus. Sed in egestas leo. Vivamus eleifend ex sed egestas sagittis. Nullam consectetur nisi urna, a venenatis eros volutpat ac. Nam dolor mi, fermentum id mi in, tristique lacinia risus. Vestibulum iaculis finibus nulla, ac congue lacus hendrerit a.</p>
       </div>
     </section>
     <div id="knowhowContainer">
@@ -43,6 +62,8 @@
       <ul>
         <li><a href="H3X Designs">H3X Designs</a></li>
         <li><a href="https://github.com/sanneVB">Github</a></li>
+        <li><a href="https://twitter.com/Moonchill">Twitter</a></li>
+        <li><a href="https://hachyderm.io/@Moonchill">Mastodon</a></li>
       </ul>
     </div>
     <section id="messageForm">
@@ -51,7 +72,7 @@
         <input type="text" name="usersName" required="true" placeholder="Enter your name here">
         <input type="email" name="usersEmail" required="true" placeholder="Enter your email here">
         <textarea name="usersMessage" required="true" placeholder="Enter your message here"></textarea>
-        <button type="submit">Submit</button>
+        <button class="formButton" type="submit">Submit</button>
       </form>
     </section>
     <section id="messages">
