@@ -98,7 +98,7 @@ nav ul li {
 
 @media (max-width: 600px) {
   nav ul { display: none; }
-  .dropdown { display: block; }
+  .dropdown { display: flex; }
 }
 
 .dropdown .dropdownButton {
@@ -114,7 +114,10 @@ nav ul li {
 
 .dropdownContent {
   display: none;
+  flex-direction: column;
   position: absolute;
+  right: 0%; 
+  top: 100%;
   background-color: #313131;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -135,7 +138,7 @@ nav ul li {
 }
 
 .dropdown:hover .dropdownContent {
-  display: block;
+  display: flex;
 }
 
 .sticky {
