@@ -84,6 +84,10 @@ nav select {
   display: none;
 }
 
+nav div {
+  display:none;
+}
+
 nav ul {
   display: flex;
   flex-direction: row-reverse;
@@ -97,9 +101,44 @@ nav ul li {
 @media (max-width: 600px) {
   nav ul     { display: none; }
   nav select { 
-    display: inline-block; 
+    display: inline-block;  
   }
+  /* nav div {
+    display: flex;
+    flex-direction: column;
+  } */
 }
+
+/* .dropdownButton {
+  background-color: rgba(0, 0, 0, 0);
+  width: 54px;
+  height: 54px;
+  color: white;
+  padding: 8px 6px 6px;
+  font-size: 16px;
+  border: 1px solid black;
+  cursor: pointer;
+  margin: 0;
+  /* background: url('assets/menu-mobile60x60.png');
+  background-repeat: no-repeat;
+  background-size: 40px 40px; 
+}*/
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: #00000000;
+  min-width: 200px;
+  z-index: 1;
+  margin-top: 20px;
+} */
+
+
 
 .sticky {
 	position: sticky;
