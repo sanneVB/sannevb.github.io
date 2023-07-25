@@ -124,22 +124,29 @@ const toggleMessagesVisibility = () => {
 
 // Lesson 6-1
 
-let githubRequest = new XMLHttpRequest();
-githubRequest.open('GET', 'https://api.github.com/users/sanneVB/repos');
-githubRequest.send();
-
-githubRequest.addEventListener('load', function () {
+function showRepos(apiData) {
   const projectSection = document.getElementById('projects');
   const projectList = projectSection.querySelector('ul');
 
-  let repositories = JSON.parse(githubRequest.responseText);
-  console.log(repositories)
-
-  for (let i = 0; i < repositories.length; i++) {
+  for (let i = 0; i < apiData.length; i++) {
     let project = document.createElement('li');
-    project.innerText = repositories[i].name;
+    project.innerText = apiData[i].name;
     projectList.appendChild(project)
   }
-})
+}
+
+function errorHandling(error) {
+  if(error instanceof TypeError && error.message.includes('API key')) {
+    console.error('Invalid API key:', error);
+  } else {
+    console.error('Fetch error: ', error)
+  }
+}
+
+fetch('https://api.github.com/users/sanneVB/rgepos', {mode: 'cors'})
+  .then(function(response) { 
+    return response.json()})
+  .then(showRepos)
+  .catch(errorHandling)
 
 toggleMessagesVisibility();
