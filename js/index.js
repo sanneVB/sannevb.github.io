@@ -136,16 +136,26 @@ function showRepos(apiData) {
 }
 
 function errorHandling(error) {
-  if(error instanceof TypeError && error.message.includes('API key')) {
-    console.error('Invalid API key:', error);
+  console.error(error)
+  // Original taken from: https://rapidapi.com/guides/error-handling-fetch
+  if(error.message.includes('404')) {
+    console.error('404 error. Check if url is correct. If it is, check auth token.', error);
   } else {
     console.error('Fetch error: ', error)
   }
 }
 
+function reponseOkCheck (response) {
+  let okay = response.ok
+  if (okay) {
+    return response.json()
+  } else {
+    throw new Error(`Response status: ${response.status}`)
+  }
+}
+
 fetch('https://api.github.com/users/sanneVB/rgepos', {mode: 'cors'})
-  .then(function(response) { 
-    return response.json()})
+  .then(reponseOkCheck)
   .then(showRepos)
   .catch(errorHandling)
 
