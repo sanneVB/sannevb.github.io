@@ -122,7 +122,7 @@ const toggleMessagesVisibility = () => {
   }
 }
 
-// Lesson 6-1
+// Lesson 6-2
 
 function showRepos(apiData) {
   const projectSection = document.getElementById('projects');
