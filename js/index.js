@@ -122,24 +122,39 @@ const toggleMessagesVisibility = () => {
   }
 }
 
-// Lesson 6-1
+// Lesson 6-2
 
-let githubRequest = new XMLHttpRequest();
-githubRequest.open('GET', 'https://api.github.com/users/sanneVB/repos');
-githubRequest.send();
-
-githubRequest.addEventListener('load', function () {
+function showRepos(apiData) {
   const projectSection = document.getElementById('projects');
   const projectList = projectSection.querySelector('ul');
 
-  let repositories = JSON.parse(githubRequest.responseText);
-  console.log(repositories)
-
-  for (let i = 0; i < repositories.length; i++) {
+  for (let i = 0; i < apiData.length; i++) {
     let project = document.createElement('li');
-    project.innerText = repositories[i].name;
+    project.innerText = apiData[i].name;
     projectList.appendChild(project)
   }
-})
+}
+
+function errorHandling(error) {
+  // Original taken from: https://rapidapi.com/guides/error-handling-fetch
+  if(error.message.includes('404')) {
+    console.error('404 error. Check if url is correct. If it is, check auth token.', error);
+  } else {
+    console.error('Fetch error: ', error)
+  }
+}
+
+function reponseOkCheck (response) {
+  if (response.ok) {
+    return response.json()
+  } else {
+    throw new Error(`Response status: ${response.status}`)
+  }
+}
+
+fetch('https://api.github.com/users/sanneVB/repos', {mode: 'cors'})
+  .then(reponseOkCheck)
+  .then(showRepos)
+  .catch(errorHandling)
 
 toggleMessagesVisibility();
