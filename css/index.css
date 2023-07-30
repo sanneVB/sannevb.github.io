@@ -146,12 +146,28 @@ nav ul li {
 	top: 0;
 }
 
+#brand {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+#brand > * {
+  margin: 0 40px 20px 40px;
+}
+
 #about {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin: 40px 0;
+}
+
+#aboutTextContainer {
+  max-width: 75%;
 }
 
 #about > * {
