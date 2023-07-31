@@ -57,7 +57,9 @@ p, h1, h2, h3, h4, h5, h6 {
   min-height: 100vh;
   background-color: #1A1A1A;
   color: #FFFFFF;
-  font-family: 'Fragment Mono', monospace;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+  font-size: 16px;
   line-height: normal;
   display: flex;
   flex-direction: column;
@@ -73,6 +75,22 @@ h1 {
   font-weight: 800;
 }
 
+h2 {
+  margin: 20px 0px 10px 0px;
+}
+
+hr {
+  color: #FFF;
+  width: 100%;
+  border: none;
+  border-top: 1px solid #FFF;
+  height: 1px;
+}
+
+ul {
+  list-style-type: none;
+}
+
 nav {
   display: flex;
   justify-content: end;
@@ -86,7 +104,6 @@ nav ul {
 }
 
 nav ul li {
-  list-style-type: none;
   margin: 5px 10px;
 }
 
@@ -141,56 +158,111 @@ nav ul li {
   display: flex;
 }
 
+#midBar {
+  flex: 6;
+}
+
+#leftBar #rightBar {
+  background-color: #1A1A1A;
+  flex: 1;
+  align-items: stretch;
+}
+
 .sticky {
 	position: sticky;
 	top: 0;
 }
 
+#mainContent {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
 #brand {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  margin: 40px 0;
-}
-
-#brand > * {
-  margin: 0 40px 20px 40px;
-}
-
-#about {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 0;
-}
-
-#aboutTextContainer {
-  max-width: 75%;
-}
-
-#about > * {
-  margin: 0 40px 20px 40px;
-}
-
-#aboutTextContainer {
-  flex: 2;
-}
-
-@media (max-width: 1200px ) {
-  #aboutTextContainer {
-    flex-basis: 100%;
-  }
-
+  margin: 40px auto; 
 }
 
 #name > h1 {
   margin: 0
 }
 
-#knowhowContainer {
-  max-width: 700px;
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#aboutTextContainer > p {
+  margin: 7px 0px;
+}
+
+#experience  {
+  margin: 40px auto;
+}
+
+#experience > ul {
+  padding: 0;
+}
+
+#experience > ul > li {
+  margin: 10px 0;
+}
+
+.experienceContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.trapezoidLeftExperience {
+  color:#1A1A1A;
+  background-color: #FFFFFF;
+  width: fit-content;
+  height: 25px;
+  line-height: 21px;
+  text-align: center;
+  position: relative;
+  padding: 0 2px;
+}
+
+.trapezoidLeftExperience:before{
+  content:"";
+  width:0px;
+  height:0px;
+  border-bottom: 25px solid rgb(255, 255, 255);
+  border-left: 20px solid transparent;
+  position: absolute;
+  right: 100%;
+  top: 0px;
+}
+
+
+@media (max-width: 600px) {
+  .experienceContainer{
+    display: flex;
+    flex-direction: column;
+  }
+  .trapezoidLeftExperience:after{
+    content:"";
+    width:0px;
+    height:0px;
+    border-bottom: 25px solid rgb(255, 255, 255);
+    border-right: 20px solid transparent;
+    position: absolute;
+    left: 100%;
+    top: 0px;
+  }
+}
+
+
+
+
+/* #knowhowContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -228,7 +300,8 @@ div#knowhowContainer > section {
   flex-basis: 50%;
   margin: 20px 0;
   width: min-content;
-}
+} */
+
 #connectContainer, #messageForm {
   margin: 40px;
 }
