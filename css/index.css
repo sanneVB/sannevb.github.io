@@ -325,7 +325,7 @@ nav ul li {
   padding: 0;
 }
 
-#skills > ul > li {
+.tag {
   /* Found on: https://stackoverflow.com/questions/10349867/how-do-i-bevel-the-corners-of-an-element */
   margin: 5px 5px;
   position: relative;
@@ -354,11 +354,43 @@ nav ul li {
     ,15px 15px
     ;
   background-repeat: no-repeat;
+  z-index: -1;
 }
 
-/* #connectContainer, #messageForm {
-  margin: 40px;
-} */
+#projects > ul {
+  display:flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+#projects > ul > li {
+  flex: 1 1 50%;
+}
+
+.repoCard {
+  padding: 2px 5px 5px 5px;
+  border: 2px solid #FFF;
+  min-height: 150px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.repoCard > ul{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.textContainer {
+  padding: 2px 5px;
+}
+
+.language {
+  width: max-content;
+  flex: auto;
+}
 
 form {
   display: flex;
