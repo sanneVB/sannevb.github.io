@@ -10,7 +10,7 @@ const skills = ['HTML', 'CSS', 'JavaScript', 'jQuery', 'SASS', 'Mesh Modeling', 
 
 const skillList = document.getElementById('skills').querySelector('ul')
 skills.forEach(skill => {
-  skillList.innerHTML += `<li>${skill}</li>`
+  skillList.innerHTML += `<li class="skill">${skill}</li>`
 })
 
 // Message section
@@ -181,6 +181,31 @@ function reponseOkCheck (response) {
     throw new Error(`Response status: ${response.status}`)
   }
 }
+
+let target = document.querySelector("#bigName")
+let headerName = document.getElementById('headerName')
+
+
+const observer = new IntersectionObserver(entries => {
+  if (!entries[0].isIntersecting) {
+    headerName.classList.add('isVisible');
+  } else {
+    headerName.classList.remove('isVisible');
+  }
+})
+
+// const observer = new IntersectionObserver(entries => {
+//   console.log(entries[0].intersectionRatio)
+//   let intersectingCheck = (entries[0].intersectionRatio < 0.9)
+//   if (intersectingCheck) {
+//     headerName.classList.remove('hide')
+//   } 
+//   if (entries[0].intersectionRatio > 0) {
+//     headerName.classList.add('hide')
+//   }
+// })
+
+observer.observe(target);
 
 fetch('https://api.github.com/users/sanneVB/repos', {mode: 'cors'})
   .then(reponseOkCheck)

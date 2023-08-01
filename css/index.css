@@ -92,8 +92,23 @@ ul {
   padding: 0;
 }
 
-.headerImg{
-  margin: 5px;
+.fadeInSection {
+  opacity: 0;
+  transform: none;
+  visibility: hidden;
+  transition: opacity 500ms ease-out, visibility 500ms ease-out;
+  will-change: opacity, transform, visibility;
+}
+.fadeInSection.isVisible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 100vw;
 }
 
 nav {
@@ -101,6 +116,7 @@ nav {
   justify-content: space-between;
   align-items: end;
   width: 100%;
+  background-color: #1A1A1A;
 }
 
 nav a:link{
@@ -112,10 +128,14 @@ nav ul {
   flex-direction: row-reverse;
 }
 
-.container {
-  max-width: 1024px;
-  margin: 0 auto;
-  width: 90vw;
+#brandContainer {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.skill {
+  z-index: -1;
 }
 
 nav ul li {
@@ -152,16 +172,22 @@ nav ul li {
 }
 
 @media (max-width: 600px) {
+  nav {
+    align-items: center;
+  }
   nav ul { display: none; }
-  .dropdown { display: flex; }
+  .dropdown { 
+    display: flex; 
+    align-items: center;
+  }
 }
 
 .dropdown .dropdownButton {
   font-size: 16px;
   border: none;
   outline: none;
+  padding: 0;
   color: white;
-  padding: 14px 16px;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
@@ -214,6 +240,10 @@ nav ul li {
   justify-content: space-around;
   align-items: center;
   margin: 40px auto; 
+}
+
+#name {
+  max-width: 302px;
 }
 
 #name > h1 {
@@ -296,6 +326,7 @@ nav ul li {
 }
 
 #skills > ul > li {
+  /* Found on: https://stackoverflow.com/questions/10349867/how-do-i-bevel-the-corners-of-an-element */
   margin: 5px 5px;
   position: relative;
   color: #ED9E05;
