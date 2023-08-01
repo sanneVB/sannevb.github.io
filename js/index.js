@@ -128,10 +128,40 @@ function showRepos(apiData) {
   const projectSection = document.getElementById('projects');
   const projectList = projectSection.querySelector('ul');
 
+  // for (let i = 0; i < apiData.length; i++) {
+  //   let project = document.createElement('li');
+  //   project.innerText = apiData[i].name;
+  //   projectList.appendChild(project)
+  // }
+
   for (let i = 0; i < apiData.length; i++) {
-    let project = document.createElement('li');
-    project.innerText = apiData[i].name;
-    projectList.appendChild(project)
+    let projectListing = document.createElement('li');
+    let projectContainer = document.createElement('div');
+    let projectLink = document.createElement('a');
+    let projectDesc = document.createElement('p');
+
+    let repoUrl = apiData[i].svn_url;
+    let repoName = apiData[i].name;
+    let repoDesc = apiData[i].description;
+
+    projectLink.setAttribute('href', repoUrl)
+    projectLink.innerText = repoName
+
+    projectDesc.innerText = repoDesc
+
+    projectContainer.appendChild(projectLink)
+    projectContainer.setAttribute('class', 'repoCard')
+
+    
+    projectContainer.appendChild(projectDesc)
+
+    projectListing.appendChild(projectContainer)
+
+
+    // const newHTML = `<a href='${repoUrl}' class='repoCard'>${repoName}</a>`
+
+    // projectListing.innerHTML = newHTML;
+    projectList.appendChild(projectListing)
   }
 }
 
