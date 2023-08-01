@@ -10,7 +10,7 @@ const skills = ['HTML', 'CSS', 'JavaScript', 'jQuery', 'SASS', 'Mesh Modeling', 
 
 const skillList = document.getElementById('skills').querySelector('ul')
 skills.forEach(skill => {
-  skillList.innerHTML += `<li>${skill}</li>`
+  skillList.innerHTML += `<li class="tag">${skill}</li>`
 })
 
 // Message section
@@ -124,14 +124,78 @@ const toggleMessagesVisibility = () => {
 
 // Lesson 6-2
 
+let repoLanguages = [];
+
 function showRepos(apiData) {
   const projectSection = document.getElementById('projects');
   const projectList = projectSection.querySelector('ul');
 
+  // for (let i = 0; i < apiData.length; i++) {
+  //   let project = document.createElement('li');
+  //   project.innerText = apiData[i].name;
+  //   projectList.appendChild(project)
+  // }
+
   for (let i = 0; i < apiData.length; i++) {
-    let project = document.createElement('li');
-    project.innerText = apiData[i].name;
-    projectList.appendChild(project)
+    let projectListing = document.createElement('li');
+    let projectContainer = document.createElement('div');
+    let projectTextContainer = document.createElement('div');
+    let projectLink = document.createElement('a');
+    let projectDesc = document.createElement('p');
+
+    let projectLanguageList = document.createElement('ul')
+
+
+    // console.log(apiData[i])
+
+    let repoUrl = apiData[i].svn_url;
+    let repoName = apiData[i].name;
+    let repoDesc = apiData[i].description;
+    let repoLanguagesUrl = apiData[i].languages_url
+
+    fetch(repoLanguagesUrl, {mode: 'cors'})
+      .then(reponseOkCheck)
+      .then((languages) => { 
+        console.log(languages)
+        const keys = Object.keys(languages)
+        const langNumber = Object.values(languages)
+        const langTotal = langNumber.reduce(
+          (accumulator, currentValue) => accumulator + currentValue
+        );
+        keys.forEach((language, index) => {
+          let projectLanguage = document.createElement('li')
+          projectLanguage.setAttribute('class', 'tag language')
+          let languagePercentage = (Math.round((langNumber[index]/langTotal)*1000))/10
+          projectLanguage.innerText = `${language}: ${languagePercentage}%`
+          projectLanguageList.appendChild(projectLanguage)
+        })
+      })
+      .catch(errorHandling);
+
+      
+
+
+    projectLink.setAttribute('href', repoUrl)
+    projectLink.innerText = repoName
+
+    projectDesc.innerText = repoDesc
+
+
+    projectTextContainer.setAttribute('class', 'textContainer')
+    projectTextContainer.appendChild(projectLink)
+    projectTextContainer.appendChild(projectDesc)
+          
+    projectContainer.setAttribute('class', 'repoCard')
+    projectContainer.appendChild(projectTextContainer)
+    projectContainer.appendChild(projectLanguageList)
+
+    projectListing.appendChild(projectContainer)
+
+
+    // const newHTML = `<a href='${repoUrl}' class='repoCard'>${repoName}</a>`
+
+    // projectListing.innerHTML = newHTML;
+    projectList.appendChild(projectListing)
   }
 }
 
@@ -151,6 +215,31 @@ function reponseOkCheck (response) {
     throw new Error(`Response status: ${response.status}`)
   }
 }
+
+let target = document.querySelector("#bigName")
+let headerName = document.getElementById('headerName')
+
+
+const observer = new IntersectionObserver(entries => {
+  if (!entries[0].isIntersecting) {
+    headerName.classList.add('isVisible');
+  } else {
+    headerName.classList.remove('isVisible');
+  }
+})
+
+// const observer = new IntersectionObserver(entries => {
+//   console.log(entries[0].intersectionRatio)
+//   let intersectingCheck = (entries[0].intersectionRatio < 0.9)
+//   if (intersectingCheck) {
+//     headerName.classList.remove('hide')
+//   } 
+//   if (entries[0].intersectionRatio > 0) {
+//     headerName.classList.add('hide')
+//   }
+// })
+
+observer.observe(target);
 
 fetch('https://api.github.com/users/sanneVB/repos', {mode: 'cors'})
   .then(reponseOkCheck)

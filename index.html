@@ -11,81 +11,118 @@
     <title>CTD Portfolio</title>
   </head>
   <body>
-    <nav class="sticky" id="navbar">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#connectContainer">Connect</a></li>
-        <li><a href="#messageForm">Leave a Message</a></li>
-      </ul>
-      <div class="dropdown">
-        <button id="dropdownImage" onclick="" class="dropdownButton">
-          <img src="assets/menu-mobile60x60.png" alt="Navigation menu icon">
-        </button>
-        <div id="dropdownNavItems" class="dropdownContent">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#skills">Skills</a>
-          <a href="#connectContainer">Connect</a>
-          <a href="#messageForm">Leave a Message</a>
+    <div class="container sticky">
+      <nav class="sticky" id="navbar">
+        <div id="brandContainer">
+          <img src="assets/logo1.svg" id="headerImg" width="50px" height="50px" alt="H3X Designs logo. A white hexagon with an orange triangle in the center.">
+          <h3 id="headerName" class="fadeInSection">Sanne van Boheemen</h3>
         </div>
-      </div>
-    </nav>
-    <section id="about">
-      <div id="name">
-        <h1>Sanne van</h1>
-        <h1>Boheemen</h1>
-      </div>
-      <img src="assets/logo1.svg" alt="H3X Designs logo. A white hexagon with an orange triangle in the center.">
-      <div id="aboutTextContainer">
-        <h2>About</h2>
-        <p>Entrepreneur 3D printing technician in the Netherlands transitioning to WebDev currently focusing on JavaScript</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod pellentesque lacus, eget porta nisl blandit sit amet. Maecenas fermentum, lacus at gravida vehicula, nibh risus dapibus enim, sit amet blandit libero lacus eget eros. Pellentesque feugiat neque vitae auctor placerat. Maecenas in euismod elit. Ut sodales magna id purus blandit pharetra. Morbi et mi at nisi mattis interdum. Nam mollis egestas mauris, at mattis nunc luctus eu. Sed mollis pretium vehicula. Etiam eu turpis molestie, commodo sapien vitae, dapibus dui. Etiam id libero ac erat dapibus faucibus id nec purus. Sed in egestas leo. Vivamus eleifend ex sed egestas sagittis. Nullam consectetur nisi urna, a venenatis eros volutpat ac. Nam dolor mi, fermentum id mi in, tristique lacinia risus. Vestibulum iaculis finibus nulla, ac congue lacus hendrerit a.</p>
-      </div>
-    </section>
-    <div id="knowhowContainer">
-      <section id="experience">
-        <h2>Experience</h2>
-        <ul>
-          <li>3D Ambact</li>
-          <li>Key 2 3D</li>
-          <li>Thinkable</li>
-          <li>H3X Designs</li>
+        <ul class="trapezoidLeftHeader">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#connectContainer">Connect</a></li>
+          <li><a href="#messageForm">Leave a Message</a></li>
         </ul>
-      </section>
-      <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-        </ul>
-      </section>
-    </div> 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul></ul>
-    </section>
-    <div id="connectContainer">
-      <h2>Connect</h2>
-      <ul>
-        <li><a href="H3X Designs">H3X Designs</a></li>
-        <li><a href="https://github.com/sanneVB">Github</a></li>
-        <li><a href="https://twitter.com/Moonchill">Twitter</a></li>
-        <li><a href="https://hachyderm.io/@Moonchill">Mastodon</a></li>
-      </ul>
+        <div class="dropdown">
+          <button id="dropdownImage" onclick="" class="dropdownButton">
+            <img src="assets/Navigation-Dark-Mobile.svg" alt="Navigation menu icon">
+          </button>
+          <div id="dropdownNavItems" class="dropdownContent">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#connectContainer">Connect</a>
+            <a href="#messageForm">Leave a Message</a>
+          </div>
+        </div>
+      </nav>
+      <hr>
     </div>
-    <section id="messageForm">
-      <h2>Leave a Message</h2>
-      <form name="leave_message">
-        <input type="text" name="usersName" required="true" placeholder="Enter your name here">
-        <input type="email" name="usersEmail" required="true" placeholder="Enter your email here">
-        <textarea name="usersMessage" required="true" placeholder="Enter your message here"></textarea>
-        <button class="formButton" type="submit">Submit</button>
-      </form>
-    </section>
-    <section id="messages">
-      <h2>Messages</h2>
-      <ul id="messagesList"></ul>
-    </section>
+    <main>
+      <div id="mainContent">
+        <section id="brand">
+          <div id="name">
+            <h1 id="bigName">Sanne van Boheemen</h1>
+          </div>
+          <img src="assets/logo1.svg" alt="H3X Designs logo. A white hexagon with an orange triangle in the center.">
+        </section>
+        <section id="about">
+          <div id="aboutTextContainer">
+            <h2>About</h2>
+            <p>Entrepreneur 3D printing technician & designer turned Web Developer. a dynamic and resourceful professional with a passion for creativity and problem-solving. As a self-employed 3D print technician and designer, Sanne has honed his skills in bringing innovative ideas to life.</p>
+            <p>With over a decade of experience as volunteer event organizer, Sanne thrived in leading teams of volunteers, handling logistics and and organized events that left a lasting impact on participants. His remarkable ability to handle challenges with a keen eye for detail and unique problem-solving solutions sets them apart.</p>
+            <p>Sanne's path to success has been shaped by personal growth and resilience. Overcoming clinical depression and embracing their diagnosis of ADD and High-Functioning Autism Spectrum Disorder, they discovered their innate talent for hands-on learning and a passion for understanding how things work. This led to a rewarding career as a product designer, developing tools for Visually Impaired Persons (VIPs) and establishing their own company, H3X Designs, where they empower others by transforming ideas into reality through 3D printing.</p>
+            <p>Driven to continuously evolve, Sanne is now pursuing new opportunities in Sweden, broadening their skill set with web development through online courses like Code the Dream. Their dedication to learning, combined with their exceptional reasoning and analytical abilities, promises an exciting future filled with innovation and positive impact.</p>
+          </div>
+        </section>
+        <section id="experience">
+          <h2>Experience</h2>
+          <ul>
+            <li>
+              <div class="experienceContainer">
+                <span>H3X Designs - Founder</span>
+                <span class="trapezoidLeftExperience">September 2018 - Present</span>
+              </div>
+              <hr>
+            </li>
+            <li>
+              <div class="experienceContainer">
+                <span>Thinkable - Principal Product Designer</span>
+                <span class="trapezoidLeftExperience">April 2018 - May 2020</span>
+              </div>
+              <hr>
+            </li>
+            <li>
+              <div class="experienceContainer">
+                <span>Key 2 3D - 3D Printing Engineer</span>
+                <span class="trapezoidLeftExperience">May 2016 - July 2017</span>
+              </div>
+              <hr>
+            </li>
+            <li>
+              <div class="experienceContainer">
+                <span>3D Ambact - Student</span>
+                <span class="trapezoidLeftExperience">Augustus 2016 - July 2017</span>
+              </div>
+              <hr>
+            </li>
+          </ul>
+        </section>
+        <section id="skills">
+          <h2>Skills</h2>
+          <ul>
+          </ul>
+        </section>
+        <section id="projects">
+          <h2>Projects</h2>
+          <ul></ul>
+        </section>
+        <div id="connectContainer">
+          <h2>Connect</h2>
+          <ul>
+            <li><a href="https://h3xdesigns.com/">H3X Designs</a></li>
+            <li><a href="https://github.com/sanneVB">Github</a></li>
+            <li><a href="https://twitter.com/Moonchill">Twitter</a></li>
+            <li><a href="https://hachyderm.io/@Moonchill">Mastodon</a></li>
+          </ul>
+        </div>
+        <section id="messageForm">
+          <h2>Leave a Message</h2>
+          <form name="leave_message">
+            <input type="text" name="usersName" required="true" placeholder="Enter your name here">
+            <input type="email" name="usersEmail" required="true" placeholder="Enter your email here">
+            <textarea name="usersMessage" required="true" placeholder="Enter your message here"></textarea>
+            <button class="formButton" type="submit">Submit</button>
+          </form>
+        </section>
+        <section id="messages">
+          <h2>Messages</h2>
+          <ul id="messagesList"></ul>
+        </section>
+      </div>
+    </main>
     <footer></footer>
     <script src="js/index.js"></script>
   </body>

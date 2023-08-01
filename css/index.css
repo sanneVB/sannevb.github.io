@@ -57,7 +57,9 @@ p, h1, h2, h3, h4, h5, h6 {
   min-height: 100vh;
   background-color: #1A1A1A;
   color: #FFFFFF;
-  font-family: 'Fragment Mono', monospace;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+  font-size: 16px;
   line-height: normal;
   display: flex;
   flex-direction: column;
@@ -73,11 +75,52 @@ h1 {
   font-weight: 800;
 }
 
+h2 {
+  margin: 20px 0px 10px 0px;
+}
+
+hr {
+  color: #FFF;
+  width: 100%;
+  border: none;
+  border-top: 1px solid #FFF;
+  height: 1px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.fadeInSection {
+  opacity: 0;
+  transform: none;
+  visibility: hidden;
+  transition: opacity 500ms ease-out, visibility 500ms ease-out;
+  will-change: opacity, transform, visibility;
+}
+.fadeInSection.isVisible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 100vw;
+}
+
 nav {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+  align-items: end;
   width: 100%;
-  background-color: #313131;
+  background-color: #1A1A1A;
+}
+
+nav a:link{
+  color: #1A1A1A;
 }
 
 nav ul {
@@ -85,9 +128,41 @@ nav ul {
   flex-direction: row-reverse;
 }
 
+#brandContainer {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.skill {
+  z-index: -1;
+}
+
 nav ul li {
-  list-style-type: none;
-  margin: 5px 10px;
+  margin: 0px 10px;
+}
+
+.trapezoidLeftHeader {
+  color:#1A1A1A;
+  background-color: #FFFFFF;
+  width: fit-content;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  position: relative;
+  padding: 0 2px;
+  text-align: right;
+}
+
+.trapezoidLeftHeader:before{
+  content:"";
+  width:0px;
+  height:0px;
+  border-bottom: 25px solid rgb(255, 255, 255);
+  border-left: 20px solid transparent;
+  position: absolute;
+  right: 100%;
+  top: 0px;
 }
 
 .dropdown {
@@ -97,16 +172,22 @@ nav ul li {
 }
 
 @media (max-width: 600px) {
+  nav {
+    align-items: center;
+  }
   nav ul { display: none; }
-  .dropdown { display: flex; }
+  .dropdown { 
+    display: flex; 
+    align-items: center;
+  }
 }
 
 .dropdown .dropdownButton {
   font-size: 16px;
   border: none;
   outline: none;
+  padding: 0;
   color: white;
-  padding: 14px 16px;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
@@ -141,80 +222,174 @@ nav ul li {
   display: flex;
 }
 
+
 .sticky {
 	position: sticky;
 	top: 0;
+  background-color: #1A1A1A;
 }
 
-#about {
+#mainContent {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+#brand {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  margin: 40px 0;
+  margin: 40px auto; 
 }
 
-#about > * {
-  margin: 0 40px 20px 40px;
-}
-
-#aboutTextContainer {
-  flex: 2;
-}
-
-@media (max-width: 1200px ) {
-  #aboutTextContainer {
-    flex-basis: 100%;
-  }
-
+#name {
+  max-width: 302px;
 }
 
 #name > h1 {
   margin: 0
 }
 
-#knowhowContainer {
-  max-width: 700px;
+#about {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
- }
-
-div#knowhowContainer > section {
-  flex: 1;
-  margin: 0 40px;
+  justify-content: center;
+  align-items: center;
 }
 
-#experience {
-  min-width: 270px;
+#aboutTextContainer > p {
+  margin: 7px 0px;
 }
 
-#skills {
-  min-width: 200px;
-}
-
-#experience > *, #skills > *  {
-  background-color: #313131;
-}
-
-#experience #skills {
-  flex: auto;
+#experience  {
+  margin: 40px auto;
 }
 
 #experience > ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
+  padding: 0;
 }
 
 #experience > ul > li {
-  flex-basis: 50%;
-  margin: 20px 0;
-  width: min-content;
+  margin: 10px 0;
 }
-#connectContainer, #messageForm {
-  margin: 40px;
+
+.experienceContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.trapezoidLeftExperience {
+  color:#1A1A1A;
+  background-color: #FFFFFF;
+  width: 330px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  position: relative;
+  padding: 0 2px;
+  text-align: right;
+  z-index: -1;
+}
+
+.trapezoidLeftExperience:before{
+  content:"";
+  width:0px;
+  height:0px;
+  border-bottom: 25px solid rgb(255, 255, 255);
+  border-left: 20px solid transparent;
+  position: absolute;
+  right: 100%;
+  top: 0px;
+  z-index: -1;
+}
+
+@media (max-width: 600px) {
+  .experienceContainer{
+    display: flex;
+    flex-direction: column;
+  }
+  .trapezoidLeftExperience:after{
+    content:"";
+    width:0px;
+    height:0px;
+    border-bottom: 25px solid rgb(255, 255, 255);
+    border-right: 20px solid transparent;
+    position: absolute;
+    left: 100%;
+    top: 0px;
+  }
+}
+
+#skills > ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.tag {
+  /* Found on: https://stackoverflow.com/questions/10349867/how-do-i-bevel-the-corners-of-an-element */
+  margin: 5px 5px;
+  position: relative;
+  color: #ED9E05;
+  width: fit-content;
+  height: fit-content;
+  line-height: 25px;
+  padding: 5px 8px 5px 15px;
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #fff, #fff)
+    ,linear-gradient(225deg, #fff, #fff)
+    ,linear-gradient(0deg, #fff, #fff)
+    ,linear-gradient(90deg, #fff, #fff)
+    ,linear-gradient(135deg, transparent 9px, #fff 10px, #fff 12px, transparent 12px)
+    ;
+  background-position: top right
+    ,top right
+    ,bottom left
+    ,bottom left
+    ,top left
+    ;
+  background-size: calc(100% - 15px) 2px
+    ,2px 100%
+    ,100% 2px
+    ,2px calc(100% - 15px)
+    ,15px 15px
+    ;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+#projects > ul {
+  display:flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+#projects > ul > li {
+  flex: 1 1 50%;
+}
+
+.repoCard {
+  padding: 2px 5px 5px 5px;
+  border: 2px solid #FFF;
+  min-height: 150px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.repoCard > ul{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.textContainer {
+  padding: 2px 5px;
+}
+
+.language {
+  width: max-content;
+  flex: auto;
 }
 
 form {
@@ -256,11 +431,11 @@ button:hover {
 }
 
 a:link {
-  color:#FFFFFF;
+  color:#FFF;
 }
 
 a:visited {
-  color:#aaaaaa;
+  color:#ED9E05;
 }
 
 #footerContainer {
