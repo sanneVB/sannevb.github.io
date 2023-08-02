@@ -3,8 +3,8 @@ notes:
 Color swap:                     Dark              Light             notes:   
   --main-color:                 #FFF;             #1a1a1a
   --accent-color:               #ED9E05;          ???
-  --passive-color:              #1a1a1a;
-  --backdrop-color:             #313131;
+  --passive-color:              #1a1a1a;          #FFF
+  --backdrop-color:             #313131;          #dddddd
   --beige:                      #dddddd;
   --passive-color-transparant:  rgba(0,0,0,0.2);
   --main-color-transparant:     rgba(255, 255, 255, 0.2);
