@@ -15,7 +15,7 @@
       <nav id="navbar">
         <div id="brandContainer">
           <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.97437 12.8608L25 0.721688L46.0256 12.8608V37.1392L25 49.2783L3.97437 37.1392V12.8608Z" stroke-width="1.75" class="logoHex"/>
+            <path d="M3.97437 12.8608L25 0.721688L46.0256 12.8608V37.1392L25 49.2783L3.97437 37.1392V12.8608Z" stroke-width="1.75" class="svgColor"/>
             <path d="M38.7841 17.0417L24.9998 40.9167L11.2156 17.0417L38.7841 17.0417Z" stroke="#ED9E05" stroke-width="1.75"/>
           </svg>
           <h3 id="headerName" class="fadeInSection">Sanne van Boheemen</h3>
@@ -30,24 +30,28 @@
               </div>
             </div>
             <ul class="trapezoidLeftHeader">
-              <li><a href="#about">About</a></li>
-              <li><a href="#experience">Experience</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#connectContainer">Connect</a></li>
-              <li><a href="#messageForm">Leave a Message</a></li>
+              <li><a href="#aboutAnchor">About</a></li>
+              <li><a href="#experienceAnchor">Experience</a></li>
+              <li><a href="#skillsAnchor">Skills</a></li>
+              <li><a href="#projectsAnchor">Projects</a></li>
+              <li><a href="#messageAnchor">Leave a Message</a></li>
             </ul>
           </div>
         <div class="dropdown">
           <button id="dropdownImage" onclick="" class="dropdownButton">
-            <img src="assets/Navigation-Dark-Mobile.svg" alt="Navigation menu icon">
+            <svg width="44" height="32" viewBox="0 0 44 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 2H42" stroke-width="4" stroke-linecap="square"  class="svgColor"/>
+                <path d="M2 15.5H42" stroke-width="4" stroke-linecap="square" class="svgColor"/>
+                <path d="M2 29.5H42" stroke-width="4" stroke-linecap="square"  class="svgColor"/>
+              </svg>
+              
           </button>
           <div id="dropdownNavItems" class="dropdownContent">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#connectContainer">Connect</a>
-            <a href="#messageForm">Leave a Message</a>
+            <a href="#aboutAnchor">About</a>
+            <a href="#experienceAnchor">Experience</a>
+            <a href="#skillsAnchor">Skills</a>
+            <a href="#projectsAnchor">Projects</a>
+            <a href="#messageAnchor">Leave a Message</a>
           </div>
         </div>
       </nav>
@@ -60,20 +64,21 @@
             <h1 id="bigName">Sanne van Boheemen</h1>
           </div>
           <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo">
-            <path d="M25.0962 77.8867L150 5.7735L274.904 77.8867V222.113L150 294.226L25.0962 222.113V77.8867Z" stroke-width="10" class="logoHex"/>
+            <path d="M25.0962 77.8867L150 5.7735L274.904 77.8867V222.113L150 294.226L25.0962 222.113V77.8867Z" stroke-width="10" class="svgColor"/>
             <path d="M230.54 103.5L150 243L69.4596 103.5L230.54 103.5Z" stroke="#ED9E05" stroke-width="10" />
           </svg>
         </section>
+        <a class="anchor" id="aboutAnchor"></a>
         <section id="about">
           <div id="aboutTextContainer">
             <h2>About</h2>
-
-            <p>Entrepreneur 3D printing technician in the Netherlands transitioning to WebDev currently focusing on JavaScript</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod pellentesque lacus, eget porta nisl blandit sit amet. Maecenas fermentum, lacus at gravida vehicula, nibh risus dapibus enim, sit amet blandit libero lacus eget eros. Pellentesque feugiat neque vitae auctor placerat. Maecenas in euismod elit. Ut sodales magna id purus blandit pharetra. Morbi et mi at nisi mattis interdum. Nam mollis egestas mauris, at mattis nunc luctus eu. Sed mollis pretium vehicula. Etiam eu turpis molestie, commodo sapien vitae, dapibus dui. Etiam id libero ac erat dapibus faucibus id nec purus. Sed in egestas leo. Vivamus eleifend ex sed egestas sagittis. Nullam consectetur nisi urna, a venenatis eros volutpat ac. Nam dolor mi, fermentum id mi in, tristique lacinia risus. Vestibulum iaculis finibus nulla, ac congue lacus hendrerit a.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod pellentesque lacus, eget porta nisl blandit sit amet. Maecenas fermentum, lacus at gravida vehicula, nibh risus dapibus enim, sit amet blandit libero lacus eget eros. Pellentesque feugiat neque vitae auctor placerat. Maecenas in euismod elit. Ut sodales magna id purus blandit pharetra. Morbi et mi at nisi mattis interdum. Nam mollis egestas mauris, at mattis nunc luctus eu. Sed mollis pretium vehicula. Etiam eu turpis molestie, commodo sapien vitae, dapibus dui. Etiam id libero ac erat dapibus faucibus id nec purus. Sed in egestas leo. Vivamus eleifend ex sed egestas sagittis. Nullam consectetur nisi urna, a venenatis eros volutpat ac. Nam dolor mi, fermentum id mi in, tristique lacinia risus. Vestibulum iaculis finibus nulla, ac congue lacus hendrerit a.</p>
+            <p>A web developer with a brain that is literally wired differently.</p>
+            <p>Starting in 2022, I decided to broaden my skill set by following several courses on freeCodeCamp. Enjoying the unique challenges that programming offered I dedicated more time to explore the rabbit hole of web development and coding.  Fast-forward to today where thanks to my creative design experience and keen eye for detail I have learned to create accessible and innovate websites. I have a tendency to approach problems that arise differently from other thanks to my autism and my passion for understanding how things tick make me work on problems till they are resolved.</p>
+            <p>With more than a decade of experience as a volunteer event organizer I have experience in working as part of a team and leading them. My unwavering commitment to continuous improvement, exceptional reasoning and analytical abilities, and unique and innovative problem-solving, I am certain I will make a significant and positive contribution to any project."</p>
           </div>
         </section>
-        <section id="experience">
+        <a class="anchor" id="experienceAnchor" ></a>
+        <section id="experience"> 
           <h2>Experience</h2>
           <ul>
             <li>
@@ -106,24 +111,18 @@
             </li>
           </ul>
         </section>
+        <a class="anchor" id="skillsAnchor"></a>
         <section id="skills">
           <h2>Skills</h2>
           <ul>
           </ul>
         </section>
+        <a class="anchor" id="projectsAnchor"></a>
         <section id="projects">
           <h2>Projects</h2>
           <ul></ul>
         </section>
-        <div id="connectContainer">
-          <h2>Connect</h2>
-          <ul>
-            <li><a href="https://h3xdesigns.com/">H3X Designs</a></li>
-            <li><a href="https://github.com/sanneVB">Github</a></li>
-            <li><a href="https://twitter.com/Moonchill">Twitter</a></li>
-            <li><a href="https://hachyderm.io/@Moonchill">Mastodon</a></li>
-          </ul>
-        </div>
+        <a class="anchor" id="messageAnchor"></a>
         <section id="messageForm">
           <h2>Leave a Message</h2>
           <form name="leave_message">
@@ -137,9 +136,9 @@
           <h2>Messages</h2>
           <ul id="messagesList"></ul>
         </section>
+      <footer></footer>
       </div>
     </main>
-    <footer></footer>
     <script src="js/index.js"></script>
   </body>
 </html>

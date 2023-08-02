@@ -78,9 +78,11 @@ body {
   flex-direction: column;
 } 
 
-.logoHex {
+.svgColor {
   stroke: var(--main-color);
 }
+
+
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 18px;
@@ -153,6 +155,7 @@ nav ul {
   display: flex;
   align-items: center;
   padding: 5px 0 5px 5px;
+  gap:5px;
 }
 
 /* theme toggle */
@@ -226,6 +229,14 @@ input:checked ~ .slider::before {
   z-index: -1;
 }
 
+.anchor::before {
+  content: '';
+  display: block;
+  height: 60px;
+  margin-top: -60px;
+  visibility: hidden;
+}
+
 /* Nav menu */
 
 nav ul li {
@@ -278,9 +289,12 @@ nav ul li {
     display: flex; 
     align-items: center;
   }
+  .trapezoidLeftExperience:before{
+    visibility: hidden;
+  }
 }
-.dropdownButton > img {
-  padding: 0 10px 0 0;
+.dropdownButton svg {
+  margin: 0 10px 0 5px;
 }
 .dropdown .dropdownButton {
   font-size: 16px;
@@ -332,6 +346,7 @@ nav ul li {
 #mainContent {
   max-width: 1024px;
   margin: 0 auto;
+  width: 98vw;
 }
 
 #brand {
@@ -423,11 +438,11 @@ nav ul li {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
+  gap: 10px;
 }
 
 .tag {
   /* Found on: https://stackoverflow.com/questions/10349867/how-do-i-bevel-the-corners-of-an-element */
-  margin: 5px 5px;
   position: relative;
   color: var(--tag-text-color);
   width: fit-content;
@@ -461,17 +476,18 @@ nav ul li {
   display:flex;
   flex-wrap: wrap;
   margin: 0 auto;
+  gap: 10px;
 }
 
 #projects > ul > li {
-  flex: 1 1 50%;
+  flex: 1 1 45%;
+
 }
 
 .repoCard {
   padding: 2px 5px 5px 5px;
   border: 2px solid var(--tag-border-color);
   min-height: 150px;
-  margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -508,14 +524,14 @@ form > * {
 }
 
 input, textarea {
-  margin: 5px;
+  margin: 5px 0px;
   font-size: 20px;
   border: 3px solid var(--accent-color);
   border-radius: 3px;
 }
 
 .formButton {
-  margin: 5px;
+  margin: 5px 0px;
   cursor: pointer;
   font-weight: 600;
   font-size: 16px;
@@ -533,6 +549,11 @@ button:hover {
 #messagesList > li {
   width: fit-content;
   background-color: var(--backdrop-color);
+  margin-right: 5px;
+}
+
+#messageList > a {
+  margin-right: 5px;
 }
 
 a:link {
@@ -550,8 +571,27 @@ a:visited {
 }
 
 footer {
-  margin: auto auto 0 auto;
-  padding: 10px;
-  background-color: var(--backdrop-color);
-  width:fit-content
+  margin: 15px 0 5px 0 !important;
+  padding: 5px;
+  background-color: var(--passive-color);
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+footer p{
+  padding: 5px;
+  margin: auto 0;
+  font-size: 1.125rem;
+}
+
+
+.socialMedia {
+  fill: var(--tag-text-color)
+}
+
+.socialMediaContainer {
+  display: flex;
+  gap: 10px;
 }
