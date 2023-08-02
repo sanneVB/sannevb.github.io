@@ -502,6 +502,11 @@ form > * {
   flex-grow: 0;
 }
 
+#usernameInput, #userEmailInput {
+  position:relative !important;
+  display: block !important;
+}
+
 input, textarea {
   margin: 5px;
   font-size: 20px;
