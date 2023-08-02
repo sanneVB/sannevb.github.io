@@ -228,16 +228,61 @@ const observer = new IntersectionObserver(entries => {
   }
 })
 
-// const observer = new IntersectionObserver(entries => {
-//   console.log(entries[0].intersectionRatio)
-//   let intersectingCheck = (entries[0].intersectionRatio < 0.9)
-//   if (intersectingCheck) {
-//     headerName.classList.remove('hide')
-//   } 
-//   if (entries[0].intersectionRatio > 0) {
-//     headerName.classList.add('hide')
-//   }
-// })
+const colors = {
+  white:'#FFF',
+  orange:'#ED9E05',
+  black:'#1a1a1a',
+  gray:'#313131',
+  beige:'#dddddd',
+  blackTransparant:'rgba(0,0,0,0.2)',
+  whiteTransparant:'rgba(255, 255, 255, 0.2)',
+}
+
+function toggleColorModes() {
+  const root = document.documentElement;
+  const mainColor = getComputedStyle(root).getPropertyValue('--main-color');
+  const accentColor = getComputedStyle(root).getPropertyValue('--accent-color');
+  const passiveColor = getComputedStyle(root).getPropertyValue('--passive-color');
+  const backdropColor = getComputedStyle(root).getPropertyValue('--backdrop-color');
+  const beige = getComputedStyle(root).getPropertyValue('--beige');
+  const passiveColorTransparant = getComputedStyle(root).getPropertyValue('--passive-color-transparant');
+  const mainColorTransparant = getComputedStyle(root).getPropertyValue('--main-color-transparant');
+  const navLinkColor = getComputedStyle(root).getPropertyValue('--nav-link-color');
+  const tagBorderColor = getComputedStyle(root).getPropertyValue('--tag-border-color');
+  const tagTextColor = getComputedStyle(root).getPropertyValue('--tag-text-color');
+
+  if (document.body.classList.contains('darkMode')) {
+    root.style.setProperty('--main-color', colors.black)
+    root.style.setProperty('--accent-color', colors.orange)
+    root.style.setProperty('--passive-color', colors.white)
+    root.style.setProperty('--backdrop-color', colors.beige)
+    root.style.setProperty('--beige', colors.beige)
+    root.style.setProperty('--passive-color-transparant', colors.whiteTransparant)
+    root.style.setProperty('--main-color-transparant', colors.blackTransparant)
+    root.style.setProperty('--nav-link-color', colors.orange)
+    root.style.setProperty('--tag-border-color', colors.orange)
+    root.style.setProperty('--tag-text-color', colors.black)
+
+    document.body.classList.remove('darkMode')
+    document.body.classList.add('lightMode')
+  } else if (document.body.classList.contains('lightMode')) {
+    root.style.setProperty('--main-color', colors.white)
+    root.style.setProperty('--accent-color', colors.orange)
+    root.style.setProperty('--passive-color', colors.black)
+    root.style.setProperty('--backdrop-color', colors.gray)
+    root.style.setProperty('--beige', colors.beige)
+    root.style.setProperty('--passive-color-transparant', colors.blackTransparant)
+    root.style.setProperty('--main-color-transparant', colors.whiteTransparant)
+    root.style.setProperty('--nav-link-color', colors.black)
+    root.style.setProperty('--tag-border-color', colors.white)
+    root.style.setProperty('--tag-text-color', colors.orange)
+
+    document.body.classList.remove('lightMode')
+    document.body.classList.add('darkMode')
+  } else {
+    console.error(`I don't know how I managed but here doesn't appear to be a light or dark mode class on the body`);
+  } 
+}
 
 observer.observe(target);
 
