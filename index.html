@@ -12,7 +12,7 @@
   </head>
   <body class="darkMode">
     <div class="container sticky">
-      <nav class="sticky" id="navbar">
+      <nav id="navbar">
         <div id="brandContainer">
           <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3.97437 12.8608L25 0.721688L46.0256 12.8608V37.1392L25 49.2783L3.97437 37.1392V12.8608Z" stroke-width="1.75" class="logoHex"/>
@@ -20,14 +20,24 @@
           </svg>
           <h3 id="headerName" class="fadeInSection">Sanne van Boheemen</h3>
         </div>
-        <ul class="trapezoidLeftHeader">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#connectContainer">Connect</a></li>
-          <li><a href="#messageForm">Leave a Message</a></li>
-        </ul>
+          <div class="flexColumn">
+            <div class="toggleContainer">
+              <div class = "toggleSwitch">
+                <label>
+                    <input type ="checkbox" onclick="toggleColorModes()">
+                    <span class ="slider"></span>
+                </label>
+              </div>
+            </div>
+            <ul class="trapezoidLeftHeader">
+              <li><a href="#about">About</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#connectContainer">Connect</a></li>
+              <li><a href="#messageForm">Leave a Message</a></li>
+            </ul>
+          </div>
         <div class="dropdown">
           <button id="dropdownImage" onclick="" class="dropdownButton">
             <img src="assets/Navigation-Dark-Mobile.svg" alt="Navigation menu icon">
@@ -57,7 +67,7 @@
         <section id="about">
           <div id="aboutTextContainer">
             <h2>About</h2>
-            <button onclick="toggleColorModes()">Toggle Colors</button>
+
             <p>Entrepreneur 3D printing technician in the Netherlands transitioning to WebDev currently focusing on JavaScript</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod pellentesque lacus, eget porta nisl blandit sit amet. Maecenas fermentum, lacus at gravida vehicula, nibh risus dapibus enim, sit amet blandit libero lacus eget eros. Pellentesque feugiat neque vitae auctor placerat. Maecenas in euismod elit. Ut sodales magna id purus blandit pharetra. Morbi et mi at nisi mattis interdum. Nam mollis egestas mauris, at mattis nunc luctus eu. Sed mollis pretium vehicula. Etiam eu turpis molestie, commodo sapien vitae, dapibus dui. Etiam id libero ac erat dapibus faucibus id nec purus. Sed in egestas leo. Vivamus eleifend ex sed egestas sagittis. Nullam consectetur nisi urna, a venenatis eros volutpat ac. Nam dolor mi, fermentum id mi in, tristique lacinia risus. Vestibulum iaculis finibus nulla, ac congue lacus hendrerit a.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod pellentesque lacus, eget porta nisl blandit sit amet. Maecenas fermentum, lacus at gravida vehicula, nibh risus dapibus enim, sit amet blandit libero lacus eget eros. Pellentesque feugiat neque vitae auctor placerat. Maecenas in euismod elit. Ut sodales magna id purus blandit pharetra. Morbi et mi at nisi mattis interdum. Nam mollis egestas mauris, at mattis nunc luctus eu. Sed mollis pretium vehicula. Etiam eu turpis molestie, commodo sapien vitae, dapibus dui. Etiam id libero ac erat dapibus faucibus id nec purus. Sed in egestas leo. Vivamus eleifend ex sed egestas sagittis. Nullam consectetur nisi urna, a venenatis eros volutpat ac. Nam dolor mi, fermentum id mi in, tristique lacinia risus. Vestibulum iaculis finibus nulla, ac congue lacus hendrerit a.</p>

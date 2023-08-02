@@ -263,7 +263,6 @@ function toggleColorModes() {
     root.style.setProperty('--tag-border-color', colors.orange)
     root.style.setProperty('--tag-text-color', colors.black)
 
-
     document.body.classList.remove('darkMode')
     document.body.classList.add('lightMode')
   } else if (document.body.classList.contains('lightMode')) {
@@ -278,14 +277,11 @@ function toggleColorModes() {
     root.style.setProperty('--tag-border-color', colors.white)
     root.style.setProperty('--tag-text-color', colors.orange)
 
-
     document.body.classList.remove('lightMode')
     document.body.classList.add('darkMode')
   } else {
     console.error(`I don't know how I managed but here doesn't appear to be a light or dark mode class on the body`);
-  }
-
-  
+  } 
 }
 
 observer.observe(target);
