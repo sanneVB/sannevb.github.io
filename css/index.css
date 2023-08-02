@@ -60,7 +60,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --passive-color-transparant: rgba(0,0,0,0.2);
   --main-color-transparant: rgba(255, 255, 255, 0.2);
   --nav-link-color: #1a1a1a;
-  --tag-border-color: #020000;
+  --tag-border-color: #fff;
   --tag-text-color: #ED9E05;
 }
 
