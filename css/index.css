@@ -497,6 +497,7 @@ nav ul li {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
+  gap: 5px;
 }
 
 .textContainer {
@@ -544,6 +545,10 @@ input, textarea {
 
 button:hover {
   box-shadow: 0 0 0 3px var(--main-color);
+}
+
+#messageForm {
+  display: none;
 }
 
 #messagesList > li {
