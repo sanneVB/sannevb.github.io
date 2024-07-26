@@ -254,6 +254,8 @@ const observer = new IntersectionObserver(entries => {
   }
 })
 
+observer.observe(target);
+
 const colors = {
   white:'#FFF',
   orange:'#ED9E05',
@@ -309,8 +311,6 @@ function toggleColorModes() {
     console.error(`I don't know how I managed but here doesn't appear to be a light or dark mode class on the body`);
   } 
 }
-
-observer.observe(target);
 
 fetch('https://api.github.com/users/sanneVB/repos', {mode: 'cors'})
   .then(reponseOkCheck)
